@@ -1,0 +1,187 @@
+2025-07-15 16:22:41 Debug level set for logging
+2025-07-15 16:22:41 Logger initialized
+2025-07-15 16:22:41 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-15 16:22:41 checkHolodex started. Connecting to internet...
+2025-07-15 16:22:43 FetchVideos: Fetched 1 videos
+2025-07-15 17:07:33 Debug level set for logging
+2025-07-15 17:07:33 Logger initialized
+2025-07-15 17:07:33 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-15 17:07:33 checkHolodex started. Connecting to internet...
+2025-07-15 17:07:36 FetchVideos: Fetched 1 videos
+2025-07-18 13:27:19 Debug level set for logging
+2025-07-18 13:27:19 Logger initialized
+2025-07-18 13:27:19 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 13:27:19 checkHolodex started. Connecting to internet...
+2025-07-18 13:27:21 FetchVideos: Fetched 1 videos
+2025-07-18 14:01:44 Debug level set for logging
+2025-07-18 14:01:44 Logger initialized
+2025-07-18 14:01:44 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 14:01:44 checkHolodex started. Connecting to internet...
+2025-07-18 14:01:45 FetchVideos: Fetched 1 videos
+2025-07-18 14:19:01 Debug level set for logging
+2025-07-18 14:19:01 Logger initialized
+2025-07-18 14:19:01 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 14:19:01 checkHolodex started. Connecting to internet...
+2025-07-18 14:19:03 FetchVideos: Fetched 3 videos
+2025-07-18 16:05:45 Debug level set for logging
+2025-07-18 16:05:45 Logger initialized
+2025-07-18 16:05:45 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 16:05:45 checkHolodex started. Connecting to internet...
+2025-07-18 16:05:47 FetchVideos: Fetched 4 videos
+2025-07-18 16:05:47 Condition met, calling Notify and scheduling FocusMode...
+2025-07-18 16:05:47 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 16:19:49 Debug level set for logging
+2025-07-18 16:19:49 Logger initialized
+2025-07-18 16:19:49 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 16:19:49 checkHolodex started. Connecting to internet...
+2025-07-18 16:19:51 FetchVideos: Fetched 4 videos
+2025-07-18 16:19:51 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-18 16:19:51 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 16:43:54 Debug level set for logging
+2025-07-18 16:43:54 Logger initialized
+2025-07-18 16:43:54 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 16:43:54 checkHolodex started. Connecting to internet...
+2025-07-18 16:43:57 FetchVideos: Fetched 4 videos
+2025-07-18 16:43:57 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-18 16:43:57 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 16:47:33 Debug level set for logging
+2025-07-18 16:47:33 Logger initialized
+2025-07-18 16:47:33 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 16:47:33 checkHolodex started. Connecting to internet...
+2025-07-18 16:47:35 FetchVideos: Fetched 4 videos
+2025-07-18 16:47:35 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-18 16:47:35 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 16:47:36 Next monitor run at 2025-07-18 16:50:00 +0700 +07
+2025-07-18 16:50:01 FetchVideos: Fetched 4 videos
+2025-07-18 16:50:01 No new streams and outside forced window, skipping Notify.
+2025-07-18 16:50:01 Next monitor run at 2025-07-18 17:00:00 +0700 +07
+2025-07-18 17:00:00 🔎 Focus mode started for: 【検証コラボ】「マリンもこよりも一緒」なのか!?マシュマロトークで検証! #頭ピンク組 【宝鐘マリン・博衣こより/ホロライブ】 [NUn4nGzg5tQ]
+2025-07-18 17:00:00 🎯 Focus check: 【検証コラボ】「マリンもこよりも一緒」なのか!?マシュマロトークで検証! #頭ピンク組 【宝鐘マリン・博衣こより/ホロライブ】 [NUn4nGzg5tQ] - Status: upcoming
+2025-07-18 17:00:01 FetchVideos: Fetched 4 videos
+2025-07-18 17:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-18 17:00:01 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 17:00:04 Next monitor run at 2025-07-18 17:10:00 +0700 +07
+2025-07-18 17:02:00 🎯 Focus check: 【検証コラボ】「マリンもこよりも一緒」なのか！？マシュマロトークで検証！ #頭ピンク組 【宝鐘マリン・博衣こより/ホロライブ】 [NUn4nGzg5tQ] - Status: live
+2025-07-18 17:10:01 FetchVideos: Fetched 4 videos
+2025-07-18 17:10:01 No new streams and outside forced window, skipping Notify.
+2025-07-18 17:10:01 Next monitor run at 2025-07-18 17:20:00 +0700 +07
+2025-07-18 17:20:01 FetchVideos: Fetched 4 videos
+2025-07-18 17:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-18 17:20:01 Next monitor run at 2025-07-18 17:30:00 +0700 +07
+2025-07-18 17:30:01 FetchVideos: Fetched 5 videos
+2025-07-18 17:30:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-18 17:30:01 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 17:30:03 Next monitor run at 2025-07-18 17:40:00 +0700 +07
+2025-07-18 17:40:01 FetchVideos: Fetched 5 videos
+2025-07-18 17:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-18 17:40:01 Next monitor run at 2025-07-18 17:50:00 +0700 +07
+2025-07-18 17:50:01 FetchVideos: Fetched 5 videos
+2025-07-18 17:50:01 No new streams and outside forced window, skipping Notify.
+2025-07-18 17:50:01 Next monitor run at 2025-07-18 18:00:00 +0700 +07
+2025-07-18 17:56:00 Exiting...
+2025-07-18 17:56:00 Application exited
+2025-07-18 17:56:05 Logger initialized
+2025-07-18 17:56:05 Trying to load .env from: C:\Users\bests\Documents\Coding\Exercise\Golang\holo-checker-app\.env
+2025-07-18 17:56:05 checkHolodex started. Connecting to internet...
+2025-07-18 17:56:07 FetchVideos: Fetched 5 videos
+2025-07-18 17:56:07 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-18 17:56:07 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 17:56:08 Next monitor run at 2025-07-18 18:00:00 +0700 +07
+2025-07-18 18:00:01 FetchVideos: Fetched 5 videos
+2025-07-18 18:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-18 18:00:01 Start Scheduled time for Oeqpamti0Dw is empty, skipping parse
+2025-07-18 18:00:03 Next monitor run at 2025-07-18 18:10:00 +0700 +07
+2025-07-18 18:00:39 Exiting...
+2025-07-18 18:00:39 Application exited
+2025-07-19 07:20:49 Running compiled binary: InfoLevel enabled
+2025-07-19 07:20:49 Logger initialized
+2025-07-19 07:20:49 checkHolodex started. Connecting to internet...
+2025-07-19 20:58:35 Running compiled binary: InfoLevel enabled
+2025-07-19 20:58:35 Logger initialized
+2025-07-19 20:58:35 checkHolodex started. Connecting to internet...
+2025-07-19 20:58:37 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-19 21:00:00 🔎 Focus mode started for: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI]
+2025-07-19 21:00:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-19 21:02:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:04:01 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:06:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:08:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:10:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:10:02 No new streams and outside forced window, skipping Notify.
+2025-07-19 21:12:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:14:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:16:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: upcoming
+2025-07-19 21:18:00 🎯 Focus check: 【ニコ担メン】歌練習をおみまもりくだたい【虎金妃笑虎】 [SwVWG6dIXOI] - Status: live
+2025-07-19 21:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 21:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 21:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 21:50:02 No new streams and outside forced window, skipping Notify.
+2025-07-19 22:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-19 22:10:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 22:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 22:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 22:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 22:50:01 No new streams and outside forced window, skipping Notify.
+2025-07-19 23:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-19 23:09:07 Application exited
+2025-07-20 06:16:31 Running compiled binary: InfoLevel enabled
+2025-07-20 06:16:31 Logger initialized
+2025-07-20 06:16:31 checkHolodex started. Connecting to internet...
+2025-07-20 06:16:33 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-20 06:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 06:30:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 06:40:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 06:50:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 07:00:02 Condition met, calling Notify and scheduling FocusMode...
+2025-07-20 07:10:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 07:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 07:28:07 Application exited
+2025-07-20 10:15:44 Running compiled binary: InfoLevel enabled
+2025-07-20 10:15:44 Logger initialized
+2025-07-20 10:15:44 checkHolodex started. Connecting to internet...
+2025-07-20 10:15:45 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-20 10:20:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 10:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 10:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 10:50:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 11:00:02 Condition met, calling Notify and scheduling FocusMode...
+2025-07-20 11:10:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 11:20:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 11:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 11:40:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 11:50:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 12:00:02 Condition met, calling Notify and scheduling FocusMode...
+2025-07-20 12:10:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 12:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 12:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 12:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 12:50:02 No new streams and outside forced window, skipping Notify.
+2025-07-20 13:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-20 13:02:11 Application exited
+2025-07-20 23:20:57 Running compiled binary: InfoLevel enabled
+2025-07-20 23:20:57 Logger initialized
+2025-07-20 23:20:57 checkHolodex started. Connecting to internet...
+2025-07-20 23:20:59 First run detected, calling Notify and scheduling FocusMode (even if empty).
+2025-07-20 23:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 23:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-20 23:50:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 00:00:00 🔎 Focus mode started for: RUZEBOW KARAOKE COMBO PACK【REBROADCAST】 [wJgJlavw-XQ]
+2025-07-21 00:00:01 🎯 Focus check: RUZEBOW KARAOKE COMBO PACK【REBROADCAST】 [wJgJlavw-XQ] - Status: upcoming
+2025-07-21 00:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-21 00:02:01 🎯 Focus check: RUZEBOW KARAOKE COMBO PACK【REBROADCAST】 [wJgJlavw-XQ] - Status: upcoming
+2025-07-21 00:04:00 🎯 Focus check: RUZEBOW KARAOKE COMBO PACK【REBROADCAST】 [wJgJlavw-XQ] - Status: live
+2025-07-21 00:10:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 00:20:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 00:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 00:40:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 00:50:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 01:00:01 Condition met, calling Notify and scheduling FocusMode...
+2025-07-21 01:10:02 No new streams and outside forced window, skipping Notify.
+2025-07-21 01:20:02 No new streams and outside forced window, skipping Notify.
+2025-07-21 01:30:01 No new streams and outside forced window, skipping Notify.
+2025-07-21 01:38:03 Application exited
+2025-07-21 10:21:53 Running compiled binary: InfoLevel enabled
+2025-07-21 10:21:53 Logger initialized
+2025-07-21 10:21:53 checkHolodex started. Connecting to internet...
+2025-07-21 10:21:57 First run detected, calling Notify and scheduling FocusMode (even if empty).

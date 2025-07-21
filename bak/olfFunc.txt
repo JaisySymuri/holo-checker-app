@@ -1,0 +1,64 @@
+// func StartFocusMode(video utility.APIVideoInfo) {
+// 	focusModesMu.Lock()
+// 	defer focusModesMu.Unlock()
+
+// 	videoID := video.ID
+
+// 	// Check if already running.
+// 	if _, exists := focusModes[videoID]; exists {
+// 		fmt.Printf("Focus mode already running for %s\n", videoID)
+// 		return
+// 	}
+
+// 	// Create a new FocusMode instance.
+// 	fm := &FocusMode{
+// 		ticker:   time.NewTicker(2 * time.Minute),
+// 		stopChan: make(chan struct{}),
+// 	}
+// 	focusModes[videoID] = fm
+
+// 	// Launch a goroutine that scrapes every 2 minutes.
+// 	go func(v utility.APIVideoInfo) {
+// 		defer func() {
+// 			focusModesMu.Lock()
+// 			delete(focusModes, v.ID)
+// 			focusModesMu.Unlock()
+// 		}()
+	
+// 		logrus.Infof("🔎 Focus mode started for: %s [%s]", v.Title, v.ID)
+	
+// 		checkAndLog := func() bool {
+// 			updatedVideo, err := controller.RequestHolodexByID(v.ID)
+// 			if err != nil {
+// 				logrus.Errorf("❌ Error in focus mode for %s: %v", v.ID, err)
+// 				return false
+// 			}
+	
+// 			if updatedVideo.StartActual != "" {
+// 				logrus.Infof("✅ StartActual found for %s [%s]", updatedVideo.Title, updatedVideo.ID)
+// 				return false
+// 			}
+	
+// 			logrus.Infof("⌛ StartActual still empty for %s [%s], will check again", updatedVideo.Title, updatedVideo.ID)
+// 			return false
+// 		}
+	
+// 		if done := checkAndLog(); done {
+// 			return
+// 		}
+	
+// 		for {
+// 			select {
+// 			case <-fm.ticker.C:
+// 				if done := checkAndLog(); done {
+// 					fm.ticker.Stop()
+// 					return
+// 				}
+// 			case <-fm.stopChan:
+// 				logrus.Infof("🛑 Focus mode stopped for: %s [%s]", v.Title, v.ID)
+// 				fm.ticker.Stop()
+// 				return
+// 			}
+// 		}
+// 	}(video)	
+// }

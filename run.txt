@@ -1,0 +1,10 @@
+# Development
+go run ./cmd/main.go
+
+# Production build (Windows GUI, no console)
+rsrc -ico favicon.ico -o ./cmd/rsrc.syso
+go build -ldflags="-H=windowsgui" -o holo-checker-app.exe ./cmd
+
+
+# Normal build (with console, for debugging)
+go build -o holo-checker-app.exe ./cmd/main.go

@@ -1,0 +1,6 @@
+Monitor
+ - Send API request
+ - API Response:
+  - Notify about singing streams
+  - Schedule focus:
+   - Send API request 

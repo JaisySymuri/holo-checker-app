@@ -1,0 +1,254 @@
+[
+    {
+        "id": "hAxHbJodoh1",
+        "title": "Natsuiro Matsuri's Arrival in Holoearth",
+        "type": "placeholder",
+        "topic_id": "singing",
+        "available_at": "2025-07-10T10:00:00.000Z",
+        "duration": 3600,
+        "status": "upcoming",
+        "start_scheduled": "2025-07-10T10:00:00.000Z",
+        "channel": {
+            "id": "UCQ0UDLQCjY0rmuxCDE38FGg",
+            "name": "Matsuri Channel 夏色まつり",
+            "org": "Hololive",
+            "suborg": "c 1st Generation",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/LZBvU0s_S-xi7fHmeab_iA8ztfGimxzisUBMODGKaIEx3r3R-tIDReiX3SlmbH2showigElJ=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Natsuiro Matsuri"
+        },
+        "link": "https://holoearth.com/news/matsuri/",
+        "credits": {
+            "editor": {
+                "name": "ThisWickedGame",
+                "user": 93838
+            }
+        },
+        "jp_name": "ホロアース 夏色まつり降臨祭",
+        "certainty": "certain",
+        "thumbnail": "https://pbs.twimg.com/media/GuSM0seasAATKfu.jpg?name=orig",
+        "placeholderType": "scheduled-yt-stream"
+    },
+    {
+        "id": "QLT32XeQmH5",
+        "title": "Members Only",
+        "type": "placeholder",
+        "topic_id": "singing",
+        "available_at": "2025-07-10T14:00:00.000Z",
+        "duration": 3600,
+        "status": "upcoming",
+        "start_scheduled": "2025-07-10T14:00:00.000Z",
+        "channel": {
+            "id": "UChgTyjG-pdNvxxhdsXfHQ5Q",
+            "name": "Pavolia Reine Ch. hololive-ID",
+            "org": "Hololive",
+            "suborg": "kcIndonesia 2nd Gen (holoro)",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/gV1Zr_UQCBsmfyqaJhgj46qud_7HkvdqDNobqz-GSY7cQ4GNSltNxAyc1Y1-9HXXvSoORbzc=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Pavolia Reine"
+        },
+        "link": "https://twitter.com/pavoliareine/status/1942223148788875468",
+        "credits": {
+            "editor": {
+                "name": "NeloBlivion#4435",
+                "user": 22050
+            }
+        },
+        "certainty": "certain",
+        "thumbnail": "https://pbs.twimg.com/media/GvQpfHfWgAAvpaQ?format=jpg&name=large",
+        "placeholderType": "scheduled-yt-stream"
+    },
+    {
+        "id": "CpGwDpEI7hS",
+        "title": "Gee guess what it's gonna be",
+        "type": "placeholder",
+        "topic_id": "singing",
+        "available_at": "2025-07-10T01:30:00.000Z",
+        "duration": 3600,
+        "status": "upcoming",
+        "start_scheduled": "2025-07-10T01:30:00.000Z",
+        "channel": {
+            "id": "UChgTyjG-pdNvxxhdsXfHQ5Q",
+            "name": "Pavolia Reine Ch. hololive-ID",
+            "org": "Hololive",
+            "suborg": "kcIndonesia 2nd Gen (holoro)",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/gV1Zr_UQCBsmfyqaJhgj46qud_7HkvdqDNobqz-GSY7cQ4GNSltNxAyc1Y1-9HXXvSoORbzc=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Pavolia Reine"
+        },
+        "link": "https://twitter.com/pavoliareine/status/1942223148788875468",
+        "credits": {
+            "editor": {
+                "name": "NeloBlivion#4435",
+                "user": 22050
+            }
+        },
+        "certainty": "certain",
+        "thumbnail": "https://pbs.twimg.com/media/GvQpfHfWgAAvpaQ?format=jpg&name=large",
+        "placeholderType": "scheduled-yt-stream"
+    },
+    {
+        "id": "QfGl3jlqt97",
+        "title": "Chicago Watchalong w/ Nerissa",
+        "type": "placeholder",
+        "topic_id": "singing",
+        "available_at": "2025-07-10T11:00:00.000Z",
+        "duration": 3600,
+        "status": "upcoming",
+        "start_scheduled": "2025-07-10T11:00:00.000Z",
+        "channel": {
+            "id": "UCHsx4Hqa-1ORjQTh9TYDhww",
+            "name": "Takanashi Kiara Ch. hololive-EN",
+            "org": "Hololive",
+            "suborg": "h English -Myth-",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/vnzn_RiKneABPPnp1-0SO4IAZQRXqVsL5RNDQYGR9GhT-Flm47vM4UJeyGfn4U_gteKqJMBwNA=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Takanashi Kiara"
+        },
+        "link": "https://twitter.com/takanashikiara/status/1942277513301954825",
+        "credits": {
+            "editor": {
+                "name": "NeloBlivion#4435",
+                "user": 22050
+            }
+        },
+        "certainty": "certain",
+        "thumbnail": "https://pbs.twimg.com/media/GvRa6jpXoAENBsz.jpg:large",
+        "placeholderType": "scheduled-yt-stream"
+    },
+    {
+        "id": "SA9lhXmi5tY",
+        "title": "【SCHEDULE】6/23 - 6/29",
+        "type": "stream",
+        "topic_id": "singing",
+        "published_at": "2023-09-12T08:07:47.000Z",
+        "available_at": "2025-07-07T11:07:00.000Z",
+        "duration": 0,
+        "status": "live",
+        "start_scheduled": "2025-07-10T11:07:00.000Z",
+        "live_viewers": 0,
+        "channel": {
+            "id": "UC060r4zABV18vcahAWR1n7w",
+            "name": "Machina X Flayon Ch. HOLOSTARS-EN",
+            "org": "Hololive",
+            "suborg": "ocHOLOSTARS English -TEMPUS- Vanguard",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/Iqey4d65X8ZWvYVCSY_xkdzdDMcw1wSESqTenq3Lk6a0nUhwPe7csjYFT5rbAhIxnUFkpQl2=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Machina X Flayon"
+        }
+    },
+     {
+        "id": "HMN4lUmVcVc",
+        "title": "【Umamusume Pretty Derby】Can I get a UMAPYOI",
+        "type": "stream",
+        "topic_id": "singing",
+        "published_at": "2025-07-07T16:02:18.000Z",
+        "available_at": "2025-07-10T00:55:51.000Z",
+        "duration": 0,
+        "status": "live",
+        "start_scheduled": "2025-07-10T01:00:00.000Z",
+        "start_actual": "2025-07-10T00:55:51.000Z",
+        "live_viewers": 12995,
+        "channel": {
+            "id": "UC9p_lqQ0FEDz327Vgf5JwqA",
+            "name": "Koseki Bijou Ch. hololive-EN",
+            "org": "Hololive",
+            "suborg": "ihEnglish -Advent-",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/Wk5Mbh-5z_dbHTp7Hyz7OSd70Cz4GknlZOqiI2J_sIsnbm_YjWN2vb39XyrXBYj-uiMsOi-95w=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Koseki Bijou"
+        }
+    },
+    {
+        "id": "PE-zgDEN2RY",
+        "title": "【Carry The Glass】IN REINE, WE TRUST.【hololiveID】",
+        "type": "stream",
+        "topic_id": "singing",
+        "published_at": "2025-07-07T13:51:40.000Z",
+        "available_at": "2025-07-10T02:01:22.000Z",
+        "duration": 0,
+        "status": "live",
+        "live_tl_count": {
+            "en": 125
+        },
+        "start_scheduled": "2025-07-10T02:00:00.000Z",
+        "start_actual": "2025-07-10T02:01:22.000Z",
+        "live_viewers": 2637,
+        "recent_live_tls": [
+            "en"
+        ],
+        "channel": {
+            "id": "UCZLZ8Jjx_RN2CXloOmgTHVg",
+            "name": "Kaela Kovalskia Ch. hololive-ID",
+            "org": "Hololive",
+            "suborg": "keIndonesia 3rd Gen (holoh3ro)",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/2jGAglj5aTcUWO7WRNfq54KV3ipKblUzxI6fAKSjAfMw6J9Qqb6NbzbJA2i0t4cKgUR7SPdWC_w=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Kaela Kovalskia"
+        }
+    },
+    {
+        "id": "5eYkIqYmiaA",
+        "title": "【Powerwash Simulator】May The Best Maid Win With @IRyS",
+        "type": "stream",
+        "topic_id": "singing",
+        "published_at": "2025-07-07T20:26:49.000Z",
+        "available_at": "2025-07-10T03:03:20.000Z",
+        "duration": 0,
+        "status": "live",
+        "start_scheduled": "2025-07-10T03:00:00.000Z",
+        "start_actual": "2025-07-10T03:03:20.000Z",
+        "live_viewers": 4731,
+        "channel": {
+            "id": "UCmbs8T6MWqUHP1tIQvSgKrg",
+            "name": "Ouro Kronii Ch. hololive-EN",
+            "org": "Hololive",
+            "suborg": "ibEnglish -Promise-",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/XxF6c2VtpdbRdLcldz5jp05FQY_JTfOXeVd8osfAZsxODIanpt0ymcn_6nitwydHNGek46cfZ04=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Ouro Kronii"
+        }
+    },
+    {
+        "id": "ayYc3_VlkXE",
+        "title": "#4【FF9】††ここが新大陸!?††【花咲みやび/ホロスターズ】",
+        "type": "stream",
+        "topic_id": "singing",
+        "published_at": "2025-07-10T02:35:03.000Z",
+        "available_at": "2025-07-10T03:30:00.000Z",
+        "duration": 0,
+        "status": "upcoming",
+        "start_scheduled": "2025-07-10T03:30:00.000Z",
+        "live_viewers": 0,
+        "channel": {
+            "id": "UC6t3-_N8A6ME1JShZHHqOMw",
+            "name": "Miyabi Ch. 花咲みやび",
+            "org": "Hololive",
+            "suborg": "maHOLOSTARS 1st Gen",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/i0PRMJxOR1NaZQp_YuPNp9q6FsyBq3Mlj3RIbtFtPAYUYAx9HcDZn18xFXRHFiXosJBmGl2mGA=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Hanasaki Miyabi"
+        }
+    },
+    {
+        "id": "T3Qdi6vx1mw",
+        "title": "【MEMBERSHIP STREAM】Peaceful Zatsudan stream with the Axelotls",
+        "type": "stream",
+        "topic_id": "singing",
+        "published_at": "2025-07-10T02:29:18.000Z",
+        "available_at": "2025-07-10T04:00:00.000Z",
+        "duration": 0,
+        "status": "upcoming",
+        "start_scheduled": "2025-07-10T04:00:00.000Z",
+        "live_viewers": 0,
+        "channel": {
+            "id": "UC2hx0xVkMoHGWijwr_lA01w",
+            "name": "Axel Syrios Ch. HOLOSTARS-EN",
+            "org": "Hololive",
+            "suborg": "oaHOLOSTARS English -TEMPUS- HQ",
+            "type": "vtuber",
+            "photo": "https://yt3.ggpht.com/uAvVek-I4lHF06RJdq5uPL-KHP3BvwtFgfBi7c9Yma8xUdAx_s8p0jc5GNooXJMSGizeoHXLiAk=s800-c-k-c0x00ffffff-no-rj",
+            "english_name": "Axel Syrios"
+        }
+    }
+]
