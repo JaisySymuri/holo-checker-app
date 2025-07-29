@@ -8,3 +8,6 @@ go build -ldflags="-H=windowsgui" -o holo-checker-app.exe ./cmd
 
 # Normal build (with console, for debugging)
 go build -o holo-checker-app.exe ./cmd/main.go
+
+
+go build -ldflags="-H=windowsgui" -o holo-checker-app.exe 

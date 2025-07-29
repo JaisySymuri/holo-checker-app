@@ -9,6 +9,12 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+var appStartTime = time.Now()
+
+func AppStartTime() time.Time {
+    return appStartTime
+}
+
 type ChangeChecker interface {
 	ShouldNotify(oldStreams, newStreams []utility.APIVideoInfo) bool
 }
@@ -47,6 +53,7 @@ type KaraokeManager struct {
 
 
 
+
 func Monitor(km *KaraokeManager) {
     apiClient := controller.NewAPIClient(utility.XApiKey)
     checker := DefaultChangeChecker{}
@@ -72,7 +79,7 @@ func handleStreamUpdate(km *KaraokeManager, checker ChangeChecker, newStreams []
     oldStreams := km.GetStreams()
 
     // Explicit first run condition
-    if len(oldStreams) == 0 {
+    if time.Since(AppStartTime()) < time.Minute {
         logrus.Info("First run detected, calling Notify and scheduling FocusMode (even if empty).")
         Notify(newStreams)
         km.SetStreams(newStreams)

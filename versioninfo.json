@@ -1,0 +1,22 @@
+{
+  "FixedFileInfo": {
+    "FileVersion": {
+      "Major": 1,
+      "Minor": 0,
+      "Patch": 0,
+      "Build": 0
+    },
+    "ProductVersion": {
+      "Major": 1,
+      "Minor": 0,
+      "Patch": 0,
+      "Build": 0
+    }
+  },
+  "StringFileInfo": {
+    "ProductName": "Holo Checker App",
+    "FileDescription": "Holo Checker Application",
+    "LegalCopyright": "© 2025 Your Name"
+  },
+  "IconPath": "favicon.ico"
+}
