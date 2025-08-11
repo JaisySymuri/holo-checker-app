@@ -3,6 +3,7 @@ package service
 import (
 	"holo-checker-app/internal/controller"
 	"holo-checker-app/internal/utility"
+	"strings"
 	"sync"
 	"time"
 
@@ -12,7 +13,7 @@ import (
 var appStartTime = time.Now()
 
 func AppStartTime() time.Time {
-    return appStartTime
+	return appStartTime
 }
 
 type ChangeChecker interface {
@@ -47,90 +48,101 @@ func isWithinFirst5Minutes() bool {
 }
 
 type KaraokeManager struct {
-	Streams []utility.APIVideoInfo
-	Mu      sync.RWMutex
+	streams         []utility.APIVideoInfo
+	scheduledVideos map[string]utility.APIVideoInfo // key by ID or something unique
+	mu              sync.RWMutex
 }
-
-
-
 
 func Monitor(km *KaraokeManager) {
-    apiClient := controller.NewAPIClient(utility.XApiKey)
-    checker := DefaultChangeChecker{}
-    var newStreams []utility.APIVideoInfo
+	apiClient := controller.NewAPIClient(utility.XApiKey)
+	checker := DefaultChangeChecker{}
+	var newStreams []utility.APIVideoInfo
 
-    err := utility.Retry(30, 10*time.Second, func() error {
-        var err error
-        newStreams, err = apiClient.FetchVideos()
-        return err
-    })
-    if err != nil {
-        logrus.Error("FetchVideos failed after retries: ", err)
-        return
-    }
+	err := utility.Retry(30, 10*time.Second, func() error {
+		var err error
+		newStreams, err = apiClient.FetchVideos()
+		return err
+	})
+	if err != nil {
+		logrus.Error("FetchVideos failed after retries: ", err)
+		return
+	}
 
-    // Filter only Hololive streams
-    hololiveStreams := FilterStreams(newStreams, IsHololive)
+	// Filter only Hololive streams
+	hololiveStreams := FilterStreams(newStreams, IsHololive)
 
-    handleStreamUpdate(km, checker, hololiveStreams)
-}
+	handleStreamUpdate(km, checker, hololiveStreams)
 
-func handleStreamUpdate(km *KaraokeManager, checker ChangeChecker, newStreams []utility.APIVideoInfo) {
-    oldStreams := km.GetStreams()
+	scheduled := km.GetScheduledVideos()
 
-    // Explicit first run condition
-    if time.Since(AppStartTime()) < time.Minute {
-        logrus.Info("First run detected, calling Notify and scheduling FocusMode (even if empty).")
-        Notify(newStreams)
-        km.SetStreams(newStreams)
-        go scheduleFocusMode(newStreams)
-        return
-    }
+	count := len(scheduled)
+	names := make([]string, 0, count)
+	for _, v := range scheduled {
+		names = append(names, v.Channel.Name)
+	}
 
-    // Usual logic for subsequent runs
-    if checker.ShouldNotify(oldStreams, newStreams) {
-        logrus.Info("Condition met, calling Notify and scheduling FocusMode...")
-        Notify(newStreams)
-        km.SetStreams(newStreams)
-        go scheduleFocusMode(newStreams)
-    } else {
-        logrus.Info("No new streams and outside forced window, skipping Notify.")
-    }
-}
+	logrus.Infof("Monitor: %d scheduled videos", count)
 
-
-func NewKaraokeManager() *KaraokeManager {
-	return &KaraokeManager{
-		Streams: make([]utility.APIVideoInfo, 0),
+	if count > 0 {
+		logrus.Infof("Monitor: Scheduled channels: %s", strings.Join(names, ", "))
+	} else {
+		logrus.Info("Monitor: No scheduled videos")
 	}
 }
 
-// In utility/karaoke_manager.go
+func handleStreamUpdate(km *KaraokeManager, checker ChangeChecker, newStreams []utility.APIVideoInfo) {
+	oldStreams := km.GetStreams()
+
+	// Explicit first run condition
+	if time.Since(AppStartTime()) < time.Minute {
+		logrus.Info("First run detected, calling Notify and scheduling FocusMode (even if empty).")
+		Notify(newStreams)
+		km.SetStreams(newStreams)
+		scheduleFocusMode(km, newStreams)
+		return
+	}
+
+	// Usual logic for subsequent runs
+	if checker.ShouldNotify(oldStreams, newStreams) {
+		logrus.Info("Condition met, calling Notify and scheduling FocusMode...")
+		Notify(newStreams)
+		km.SetStreams(newStreams)
+		scheduleFocusMode(km, newStreams)
+	} else {
+		km.SetStreams(newStreams)
+		logrus.Info("No new streams and outside forced window, skipping Notify.")
+	}
+}
+
+func NewKaraokeManager() *KaraokeManager {
+	return &KaraokeManager{
+		streams:         make([]utility.APIVideoInfo, 0),
+		scheduledVideos: make(map[string]utility.APIVideoInfo),
+	}
+}
+
 func (km *KaraokeManager) SetStreams(newStreams []utility.APIVideoInfo) {
-	km.Mu.Lock()
-	defer km.Mu.Unlock()
-	km.Streams = newStreams
+	km.mu.Lock()
+	defer km.mu.Unlock()
+	km.streams = newStreams
 }
 
 func (km *KaraokeManager) GetStreams() []utility.APIVideoInfo {
-	km.Mu.RLock()
-	defer km.Mu.RUnlock()
-	return append([]utility.APIVideoInfo{}, km.Streams...)
+	km.mu.RLock()
+	defer km.mu.RUnlock()
+	return append([]utility.APIVideoInfo{}, km.streams...)
 }
 
 func FilterStreams(streams []utility.APIVideoInfo, predicate func(utility.APIVideoInfo) bool) []utility.APIVideoInfo {
-    var filtered []utility.APIVideoInfo
-    for _, stream := range streams {
-        if predicate(stream) {
-            filtered = append(filtered, stream)
-        }
-    }
-    return filtered
+	var filtered []utility.APIVideoInfo
+	for _, stream := range streams {
+		if predicate(stream) {
+			filtered = append(filtered, stream)
+		}
+	}
+	return filtered
 }
 
 func IsHololive(stream utility.APIVideoInfo) bool {
-    return stream.Channel.Org == "Hololive"
+	return stream.Channel.Org == "Hololive"
 }
-
-
-

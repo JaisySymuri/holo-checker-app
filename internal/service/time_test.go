@@ -6,8 +6,6 @@ package service
 // 	"time"
 // )
 
-
-
 // func TestVideoTimeToStart(t *testing.T) {
 // 	var fetcher controller.VideoFetcher = &controller.MockHolodexClient{} // note: must be a pointer
 

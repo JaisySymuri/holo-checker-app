@@ -9,7 +9,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-
 func Notify(videoInfos []utility.APIVideoInfo) error {
 	var message string
 
@@ -61,7 +60,7 @@ func makeFoundMessage(info utility.APIVideoInfo) (string, error) {
 		info.Status, info.TopicID, info.Channel.Name, FormatDuration(durationUntilStart),
 	)
 
-	// logrus.Debug("Debug: ", message)	
+	// logrus.Debug("Debug: ", message)
 
 	return message, nil
 }
@@ -74,49 +73,44 @@ func makeNotFoundMessage() (string, error) {
 	return message, nil
 }
 
-
-
 func makeStartedMessage(info utility.APIVideoInfo) (string, error) {
-    if info.ID == "" || info.Channel.Name == "" {
-        return "", fmt.Errorf("missing video ID or channel name")
-    }
+	if info.ID == "" || info.Channel.Name == "" {
+		return "", fmt.Errorf("missing video ID or channel name")
+	}
 
-    message := fmt.Sprintf(
-        "%s is live! Watch now: https://www.youtube.com/watch?v=%s (channel: %s)",
-        info.Title, info.ID, info.Channel.Name,
-    )
-    return message, nil
+	message := fmt.Sprintf(
+		"%s is live! Watch now: https://www.youtube.com/watch?v=%s (channel: %s)",
+		info.Title, info.ID, info.Channel.Name,
+	)
+	return message, nil
 }
 
 // ---------- Presentation layer ----------
 type Notifier interface {
-    Started(info utility.APIVideoInfo) error
+	Started(info utility.APIVideoInfo) error
 }
 
 // One implementation that uses your helper functions + logrus
 type multiNotifier struct{}
 
-
-
 func (multiNotifier) send(msg string) error {
-    // Telegram
-    if err := controller.SendMessageToTelegram(
-        utility.BotToken, utility.ChatID, msg); err != nil {
-        return fmt.Errorf("telegram: %w", err)
-    }
-    // WhatsApp
-    if err := controller.SendMessageToWhatsApp(
-        utility.PhoneNumber, utility.ApiKey, msg); err != nil {
-        return fmt.Errorf("whatsapp: %w", err)
-    }
-    return nil
+	// Telegram
+	if err := controller.SendMessageToTelegram(
+		utility.BotToken, utility.ChatID, msg); err != nil {
+		return fmt.Errorf("telegram: %w", err)
+	}
+	// WhatsApp
+	if err := controller.SendMessageToWhatsApp(
+		utility.PhoneNumber, utility.ApiKey, msg); err != nil {
+		return fmt.Errorf("whatsapp: %w", err)
+	}
+	return nil
 }
 
 func (n multiNotifier) Started(info utility.APIVideoInfo) error {
-    msg, err := makeStartedMessage(info)
-    if err != nil {
-        return err
-    }
-    return n.send(msg)
+	msg, err := makeStartedMessage(info)
+	if err != nil {
+		return err
+	}
+	return n.send(msg)
 }
-

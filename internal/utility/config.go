@@ -38,7 +38,6 @@ func SetEnv() {
 	XApiKey = os.Getenv("XAPIKEY")
 }
 
-
 // Custom Log Formatter
 type SimpleFormatter struct{}
 
@@ -50,46 +49,44 @@ func (f *SimpleFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 // Detect if a console is attached
 func consoleAttached() bool {
-    // GetStdHandle returns INVALID_HANDLE_VALUE or 0 if no console is attached
-    h, err := syscall.GetStdHandle(syscall.STD_OUTPUT_HANDLE)
-    return err == nil && h != 0 && h != syscall.InvalidHandle
+	// GetStdHandle returns INVALID_HANDLE_VALUE or 0 if no console is attached
+	h, err := syscall.GetStdHandle(syscall.STD_OUTPUT_HANDLE)
+	return err == nil && h != 0 && h != syscall.InvalidHandle
 }
 
 func isGoRun() bool {
-    exePath, err := os.Executable()
-    if err != nil {
-        return false // default to compiled mode
-    }
-    return strings.Contains(exePath, os.TempDir()) // "go run" builds in temp dir
+	exePath, err := os.Executable()
+	if err != nil {
+		return false // default to compiled mode
+	}
+	return strings.Contains(exePath, os.TempDir()) // "go run" builds in temp dir
 }
 
 func SetLog() {
-    logrus.SetFormatter(&SimpleFormatter{})
+	logrus.SetFormatter(&SimpleFormatter{})
 
-    logFile, err := os.OpenFile("debug2.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-    if err != nil {
-        logrus.Fatalf("Failed to open log file: %v", err)
-    }
+	logFile, err := os.OpenFile("debug2.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		logrus.Fatalf("Failed to open log file: %v", err)
+	}
 
-    if consoleAttached() {
-        multiWriter := io.MultiWriter(os.Stdout, logFile)
-        logrus.SetOutput(multiWriter)
-        logrus.Debug("Console detected: logging to console + file")
-    } else {
-        logrus.SetOutput(logFile)
-        logrus.Debug("No console detected: logging to file only")
-    }
+	if consoleAttached() {
+		multiWriter := io.MultiWriter(os.Stdout, logFile)
+		logrus.SetOutput(multiWriter)
+		logrus.Debug("Console detected: logging to console + file")
+	} else {
+		logrus.SetOutput(logFile)
+		logrus.Debug("No console detected: logging to file only")
+	}
 
-    // Set log level based on execution mode
-    if isGoRun() {
-        logrus.SetLevel(logrus.DebugLevel)
-        logrus.Debug("Running via go run: DebugLevel enabled")
-    } else {
-        logrus.SetLevel(logrus.InfoLevel)
-        logrus.Info("Running compiled binary: InfoLevel enabled")
-    }
+	// Set log level based on execution mode
+	if isGoRun() {
+		logrus.SetLevel(logrus.DebugLevel)
+		logrus.Debug("Running via go run: DebugLevel enabled")
+	} else {
+		logrus.SetLevel(logrus.InfoLevel)
+		logrus.Info("Running compiled binary: InfoLevel enabled")
+	}
 
-    logrus.Info("Logger initialized")
+	logrus.Info("Logger initialized")
 }
-
-

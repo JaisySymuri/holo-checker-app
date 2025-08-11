@@ -10,4 +10,5 @@ go build -ldflags="-H=windowsgui" -o holo-checker-app.exe ./cmd
 go build -o holo-checker-app.exe ./cmd/main.go
 
 
+// working command
 go build -ldflags="-H=windowsgui" -o holo-checker-app.exe 

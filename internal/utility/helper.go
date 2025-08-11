@@ -22,10 +22,5 @@ func Retry(attempts int, sleep time.Duration, fn func() error) error {
 
 func SetupTestEnv() {
 	logrus.SetLevel(logrus.DebugLevel)
-    SetEnv()    
+	SetEnv()
 }
-
-
-
-
-

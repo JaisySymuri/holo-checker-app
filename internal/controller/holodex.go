@@ -10,11 +10,9 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-
-
 type HolodexAPIClient struct {
 	BaseURL string
-	xApiKey  string
+	xApiKey string
 	Client  *http.Client
 }
 
@@ -22,7 +20,7 @@ type HolodexAPIClient struct {
 func NewAPIClient(apiKey string) *HolodexAPIClient {
 	return &HolodexAPIClient{
 		BaseURL: "https://holodex.net/api/v2/live",
-		xApiKey:  utility.XApiKey,
+		xApiKey: utility.XApiKey,
 		Client:  &http.Client{},
 	}
 }
@@ -85,8 +83,6 @@ func (c *HolodexAPIClient) fetchVideosByTopicAndType(topic, videoType string) ([
 	return videos, nil
 }
 
-
-
 func RequestHolodexByID(videoID string) (*utility.APIVideoInfo, error) {
 	// Prepare request
 	baseURL := "https://holodex.net/api/v2/live"
@@ -114,7 +110,6 @@ func RequestHolodexByID(videoID string) (*utility.APIVideoInfo, error) {
 	}
 
 	if len(videos) == 0 {
-		logrus.Warnf("No video found for ID: %s", videoID)
 		return nil, fmt.Errorf("no video found for ID: %s", videoID)
 	}
 
@@ -123,4 +118,3 @@ func RequestHolodexByID(videoID string) (*utility.APIVideoInfo, error) {
 
 	return &video, nil
 }
-

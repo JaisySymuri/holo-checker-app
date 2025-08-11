@@ -9,7 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var Running  bool = true
+var Running bool = true
 
 func OnReady(km *KaraokeManager) {
 	iconData, err := os.ReadFile("favicon.ico")
@@ -65,5 +65,3 @@ func OnReady(km *KaraokeManager) {
 func OnExit() {
 	logrus.Info("Application exited")
 }
-
-

@@ -1,27 +1,22 @@
 package utility
 
-
-
-
-
 var (
 	BotToken    string
 	ChatID      string
 	PhoneNumber string
-	ApiKey      string	
+	ApiKey      string
 	XApiKey     string
 )
-
 
 type HolodexScraper struct {
 	VideoInfos []APIVideoInfo
 }
 
 type Channel struct {
-	ID          string `json:"id"`
-	Name        string `json:"name"`
-	Org         string `json:"org"`
-	Suborg      string `json:"suborg"`
+	ID     string `json:"id"`
+	Name   string `json:"name"`
+	Org    string `json:"org"`
+	Suborg string `json:"suborg"`
 }
 
 type APIVideoInfo struct {
@@ -32,10 +27,6 @@ type APIVideoInfo struct {
 	Duration       int     `json:"duration"` // seconds
 	Status         string  `json:"status"`   // "upcoming", "live", etc.
 	StartScheduled string  `json:"start_scheduled"`
-	StartActual string  `json:"start_actual"`
+	StartActual    string  `json:"start_actual"`
 	Channel        Channel `json:"channel"`
 }
-
-
-
-

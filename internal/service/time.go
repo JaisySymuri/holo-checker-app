@@ -44,5 +44,5 @@ func FormatDuration(d time.Duration) string {
 
 // Simulate timeNow function
 var TimeNow = func() time.Time {
-    return time.Now().UTC()
+	return time.Now().UTC()
 }

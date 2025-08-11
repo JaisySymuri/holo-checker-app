@@ -37,20 +37,19 @@ func LoadMockHolodexData() ([]utility.APIVideoInfo, error) {
 // LoadMockHolodexDataByID returns the first APIVideoInfo in testdata/holodex.json
 // whose ID matches videoID.  If no match is found, it returns (nil, os.ErrNotExist).
 func LoadMockHolodexDataByID(videoID string) (*utility.APIVideoInfo, error) {
-    // Re‑use the existing loader so we keep one source of truth.
-    videos, err := LoadMockHolodexData()
-    if err != nil {
-        return nil, err
-    }
+	// Re‑use the existing loader so we keep one source of truth.
+	videos, err := LoadMockHolodexData()
+	if err != nil {
+		return nil, err
+	}
 
-    for i := range videos {
-        if videos[i].ID == videoID {            // or videos[i].VideoID / YoutubeID – adjust field name
-            return &videos[i], nil
-        }
-    }
-    return nil, fmt.Errorf("video %q not found in mock data: %w", videoID, os.ErrNotExist)
+	for i := range videos {
+		if videos[i].ID == videoID { // or videos[i].VideoID / YoutubeID – adjust field name
+			return &videos[i], nil
+		}
+	}
+	return nil, fmt.Errorf("video %q not found in mock data: %w", videoID, os.ErrNotExist)
 }
-
 
 // findProjectRoot walks up to find go.mod to locate root directory
 func findProjectRoot() (string, error) {
