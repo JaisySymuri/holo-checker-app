@@ -12,3 +12,5 @@ go build -o holo-checker-app.exe ./cmd/main.go
 
 // working command
 go build -ldflags="-H=windowsgui" -o holo-checker-app.exe 
+
+https://drive.google.com/drive/folders/1CABXvWSzEHYPJ-1jqWsYVe1n-NIA1F6n?hl=id

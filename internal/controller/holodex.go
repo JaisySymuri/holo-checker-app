@@ -16,6 +16,13 @@ type HolodexAPIClient struct {
 	Client  *http.Client
 }
 
+type VideoFetcher interface {
+    FetchVideos() ([]utility.APIVideoInfo, error)
+}
+
+// HolodexAPIClient already has FetchVideos(), so it automatically satisfies VideoFetcher
+var _ VideoFetcher = (*HolodexAPIClient)(nil)
+
 // NewAPIClient constructs a new Holodex API client.
 func NewAPIClient(apiKey string) *HolodexAPIClient {
 	return &HolodexAPIClient{

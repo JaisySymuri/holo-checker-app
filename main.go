@@ -2,6 +2,7 @@
 package main
 
 import (
+	"holo-checker-app/internal/controller"
 	"holo-checker-app/internal/service"
 	"holo-checker-app/internal/utility"
 	"net/http"
@@ -18,6 +19,7 @@ func main() {
 	utility.SetEnv()
 
 	km := service.NewKaraokeManager()
+	apiClient := controller.NewAPIClient(utility.XApiKey)
 
 	logrus.Info("checkHolodex started. Connecting to internet...")
 
@@ -29,7 +31,7 @@ func main() {
 	}()
 
 	go func() {
-		service.Monitor(km)
+		service.Monitor(km, apiClient)
 
 		// Align to next 10-minute mark
 		now := time.Now()
@@ -41,7 +43,7 @@ func main() {
 		defer ticker.Stop()
 
 		for service.Running {
-			service.Monitor(km)
+			service.Monitor(km, apiClient)
 
 			next := time.Now().Add(10 * time.Minute).Truncate(10 * time.Minute)
 			logrus.Debugf("Next monitor run at %v", next)
