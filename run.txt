@@ -13,4 +13,11 @@ go build -o holo-checker-app.exe ./cmd/main.go
 // working command
 go build -ldflags="-H=windowsgui" -o holo-checker-app.exe 
 
-https://drive.google.com/drive/folders/1CABXvWSzEHYPJ-1jqWsYVe1n-NIA1F6n?hl=id
+Update 27-4-26:
+refactor: decouple Monitor from concrete API client using VideoFetcher interface
+- Introduce VideoFetcher interface to abstract FetchVideos dependency
+- Update Monitor to accept a fetcher via dependency injection
+- Enable easier testing with mock implementations
+- Improve flexibility and reduce coupling to HolodexAPIClient
+
+Plan: add more target topic
