@@ -5,12 +5,12 @@ import (
 	"holo-checker-app/internal/controller"
 	"holo-checker-app/internal/service"
 	"holo-checker-app/internal/utility"
-	"net/http"
+	// "net/http"
 	_ "net/http/pprof"
 	"time"
 
 	"github.com/getlantern/systray"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
+	// "github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/sirupsen/logrus"
 )
 
@@ -23,12 +23,12 @@ func main() {
 
 	logrus.Info("checkHolodex started. Connecting to internet...")
 
-	go func() {
-		http.Handle("/metrics", promhttp.Handler())
-		if err := http.ListenAndServe("localhost:2112", nil); err != nil {
-			panic(err)
-		}
-	}()
+	// go func() {
+	// 	http.Handle("/metrics", promhttp.Handler())
+	// 	if err := http.ListenAndServe("localhost:2112", nil); err != nil {
+	// 		panic(err)
+	// 	}
+	// }()
 
 	go func() {
 		service.Monitor(km, apiClient)
