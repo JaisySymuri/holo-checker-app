@@ -66,7 +66,7 @@ func makeFoundMessage(info utility.APIVideoInfo) (string, error) {
 }
 
 func makeNotFoundMessage() (string, error) {
-	message := "API: No 'Singing' stream scheduled."
+	message := "No 'Singing' stream scheduled."
 
 	// logrus.Debug("Debug: ", message)
 
