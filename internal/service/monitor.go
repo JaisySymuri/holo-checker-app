@@ -12,6 +12,8 @@ import (
 
 var appStartTime = time.Now()
 
+
+
 func AppStartTime() time.Time {
 	return appStartTime
 }
@@ -53,42 +55,40 @@ type KaraokeManager struct {
 	mu              sync.RWMutex
 }
 
-func Monitor(km *KaraokeManager) {
-	apiClient := controller.NewAPIClient(utility.XApiKey)
-	checker := DefaultChangeChecker{}
-	var newStreams []utility.APIVideoInfo
+func Monitor(km *KaraokeManager, fetcher controller.VideoFetcher) {
+    checker := DefaultChangeChecker{}
+    var newStreams []utility.APIVideoInfo
 
-	err := utility.Retry(30, 10*time.Second, func() error {
-		var err error
-		newStreams, err = apiClient.FetchVideos()
-		return err
-	})
-	if err != nil {
-		logrus.Error("FetchVideos failed after retries: ", err)
-		return
-	}
+    err := utility.Retry(30, 10*time.Second, func() error {
+        var err error
+        newStreams, err = fetcher.FetchVideos()
+        return err
+    })
+    if err != nil {
+        logrus.Error("FetchVideos failed after retries: ", err)
+        return
+    }
 
-	// Filter only Hololive streams
-	hololiveStreams := FilterStreams(newStreams, IsHololive)
+    // Filter only Hololive streams
+    hololiveStreams := FilterStreams(newStreams, IsHololive)
+    handleStreamUpdate(km, checker, hololiveStreams)
 
-	handleStreamUpdate(km, checker, hololiveStreams)
+    scheduled := km.GetScheduledVideos()
 
-	scheduled := km.GetScheduledVideos()
+    count := len(scheduled)
+    names := make([]string, 0, count)
+    for _, v := range scheduled {
+        names = append(names, v.Channel.Name)
+    }
 
-	count := len(scheduled)
-	names := make([]string, 0, count)
-	for _, v := range scheduled {
-		names = append(names, v.Channel.Name)
-	}
-
-	logrus.Infof("Monitor: %d scheduled videos", count)
-
-	if count > 0 {
-		logrus.Infof("Monitor: Scheduled channels: %s", strings.Join(names, ", "))
-	} else {
-		logrus.Info("Monitor: No scheduled videos")
-	}
+    logrus.Infof("Monitor: %d scheduled videos", count)
+    if count > 0 {
+        logrus.Infof("Monitor: Scheduled channels: %s", strings.Join(names, ", "))
+    } else {
+        logrus.Info("Monitor: No scheduled videos")
+    }
 }
+
 
 func handleStreamUpdate(km *KaraokeManager, checker ChangeChecker, newStreams []utility.APIVideoInfo) {
 	oldStreams := km.GetStreams()

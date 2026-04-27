@@ -1,6 +1,8 @@
 package service
 
 import (
+	"holo-checker-app/internal/controller"
+	"holo-checker-app/internal/utility"
 	"os"
 	"syscall"
 	"time"
@@ -28,6 +30,8 @@ func OnReady(km *KaraokeManager) {
 	hideConsoleMenuItem := systray.AddMenuItem("Hide Console", "Hide the console window")
 	stopFocusMode := systray.AddMenuItem("Stop focus", "Stopping focus mode for the earliest stream")
 
+	apiClient := controller.NewAPIClient(utility.XApiKey)
+
 	go func() {
 		for {
 			select {
@@ -35,7 +39,7 @@ func OnReady(km *KaraokeManager) {
 				if !Running {
 					Running = true
 					logrus.Info("checkHolodex started")
-					go Monitor(km)
+					go Monitor(km, apiClient)
 				}
 			case <-pauseMenuItem.ClickedCh:
 				if Running {
@@ -47,7 +51,7 @@ func OnReady(km *KaraokeManager) {
 				logrus.Info("checkHolodex restarting")
 				time.Sleep(2 * time.Second)
 				Running = true
-				go Monitor(km)
+				go Monitor(km, apiClient)
 			case <-hideConsoleMenuItem.ClickedCh:
 				syscall.NewLazyDLL("kernel32.dll").NewProc("FreeConsole").Call()
 				logrus.Info("Console window hidden")
