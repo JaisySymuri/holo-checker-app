@@ -21,3 +21,43 @@ refactor: decouple Monitor from concrete API client using VideoFetcher interface
 - Improve flexibility and reduce coupling to HolodexAPIClient
 
 Plan: add more target topic
+
+Linux
+Then paste this:
+
+[Unit]
+Description=Holo Checker App
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=opc
+WorkingDirectory=/opt/holo-checker
+ExecStart=/opt/holo-checker/holo-checker-app-linux-arm64
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+Then run:
+
+sudo systemctl daemon-reload
+sudo systemctl enable holo-checker
+sudo systemctl start holo-checker
+Useful checks:
+
+sudo systemctl status holo-checker
+journalctl -u holo-checker -f
+If you want to edit it again later:
+
+sudo vi /etc/systemd/system/holo-checker.service
+and after any edit:
+
+sudo systemctl daemon-reload
+sudo systemctl restart holo-checker
+A couple of notes so we don’t get surprised:
+
+User=opc means the app runs as the opc user.
+WorkingDirectory=/opt/holo-checker matters because your app reads .env from the current directory.
+Restart=always makes it come back if it exits or crashes.
