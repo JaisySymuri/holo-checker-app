@@ -12,7 +12,7 @@ It periodically queries an API for scheduled or live streams, filters them based
 - **Focus Mode Scheduling**: Automatically schedules focus mode on stream updates.
 - **Prometheus Metrics**: Exposes a `/metrics` endpoint on `localhost:2112` for monitoring.
 - **Logging & Retry Mechanism**: Built-in logging using `logrus` and retry mechanism for API calls.
-- **System Tray Integration**: Provides a system tray interface for better user interaction.
+- **Windows Tray + Linux Headless Modes**: Uses the system tray on Windows and runs as a headless service on Linux.
 
 ---
 
@@ -83,7 +83,7 @@ Do not share your real credentials publicly. The above values are examples only.
 To run the application in development mode:
 
 ```sh
-go run ./cmd/main.go
+go run .
 ```
 
 ## Production Build (Windows GUI, no console)
@@ -91,8 +91,8 @@ go run ./cmd/main.go
 To build the application for Windows as a GUI app (no console window):
 
 ```sh
-rsrc -ico favicon.ico -o ./cmd/rsrc.syso
-go build -ldflags="-H=windowsgui" -o holo-checker-app.exe ./cmd
+rsrc -ico favicon.ico -o resource.syso
+go build -ldflags="-H=windowsgui" -o holo-checker-app.exe .
 ```
 
 ## Normal Build (with console, for debugging)
@@ -100,8 +100,18 @@ go build -ldflags="-H=windowsgui" -o holo-checker-app.exe ./cmd
 To build the application with a console window (useful for debugging):
 
 ```sh
-go build -o holo-checker-app.exe ./cmd/main.go
+go build -o holo-checker-app.exe .
 ```
+
+## Oracle Linux ARM Build
+
+For Oracle Linux on ARM64, build a headless Linux binary:
+
+```sh
+GOOS=linux GOARCH=arm64 go build -o holo-checker-app-linux-arm64 .
+```
+
+On Linux the app runs without the Windows tray and stays alive until it receives `SIGINT` or `SIGTERM`.
 
 ---
 

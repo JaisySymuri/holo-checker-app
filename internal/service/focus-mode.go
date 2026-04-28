@@ -31,6 +31,9 @@ var (
 func (km *KaraokeManager) AddScheduledVideo(v utility.APIVideoInfo) {
 	km.mu.Lock()
 	defer km.mu.Unlock()
+	if km.scheduledVideos == nil {
+		km.scheduledVideos = make(map[string]utility.APIVideoInfo)
+	}
 	km.scheduledVideos[v.ID] = v
 }
 
@@ -68,7 +71,7 @@ func scheduleFocusMode(km *KaraokeManager, videos []utility.APIVideoInfo) {
 	}
 
 	// Then, set timers for each scheduled video
-	for _, video := range videos {	
+	for _, video := range videos {
 		startTime, err := time.Parse(time.RFC3339, video.StartScheduled)
 		if err != nil {
 			continue
@@ -79,7 +82,7 @@ func scheduleFocusMode(km *KaraokeManager, videos []utility.APIVideoInfo) {
 		go func(v utility.APIVideoInfo) {
 			timer := time.NewTimer(delay)
 			<-timer.C
-			StartFocusMode(v, 2*time.Minute)			
+			StartFocusMode(v, 2*time.Minute)
 		}(video)
 	}
 

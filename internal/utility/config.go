@@ -6,7 +6,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"syscall"
 
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"
@@ -45,13 +44,6 @@ func (f *SimpleFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 	timeFormat := entry.Time.Format("2006-01-02 15:04:05")
 	message := fmt.Sprintf("%s %s\n", timeFormat, entry.Message)
 	return []byte(message), nil
-}
-
-// Detect if a console is attached
-func consoleAttached() bool {
-	// GetStdHandle returns INVALID_HANDLE_VALUE or 0 if no console is attached
-	h, err := syscall.GetStdHandle(syscall.STD_OUTPUT_HANDLE)
-	return err == nil && h != 0 && h != syscall.InvalidHandle
 }
 
 func isGoRun() bool {
