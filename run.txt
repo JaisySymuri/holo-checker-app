@@ -20,4 +20,4 @@ refactor: decouple Monitor from concrete API client using VideoFetcher interface
 - Enable easier testing with mock implementations
 - Improve flexibility and reduce coupling to HolodexAPIClient
 
-Plan: add more target topic
+Update 27-4-28: added more target topics, linux and script branch

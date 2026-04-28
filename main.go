@@ -5,6 +5,9 @@ import (
 	"holo-checker-app/internal/controller"
 	"holo-checker-app/internal/service"
 	"holo-checker-app/internal/utility"
+	"os/exec"
+	"runtime"
+
 	// "net/http"
 	_ "net/http/pprof"
 	"time"
@@ -14,9 +17,27 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+func isHostReachable(host string) bool {
+	var cmd *exec.Cmd
+
+	if runtime.GOOS == "windows" {
+		cmd = exec.Command("ping", "-n", "1", host)
+	} else {
+		cmd = exec.Command("ping", "-c", "1", host)
+	}
+
+	err := cmd.Run()
+	return err == nil
+}
+
 func main() {
 	utility.SetLog()
 	utility.SetEnv()
+
+	if isHostReachable("168.110.203.131") {
+		logrus.Warn("Linux server reachable. Exiting Windows app.")
+		return
+	}
 
 	km := service.NewKaraokeManager()
 	apiClient := controller.NewAPIClient(utility.XApiKey)
