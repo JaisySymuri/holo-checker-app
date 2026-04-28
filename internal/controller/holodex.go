@@ -34,7 +34,7 @@ func NewAPIClient(apiKey string) *HolodexAPIClient {
 
 func (c *HolodexAPIClient) FetchVideos() ([]utility.APIVideoInfo, error) {
 	types := []string{"stream", "placeholder"}
-	topics := []string{"singing", "Marshmallow", "announce", "talk", "News_Show", "Anniversary"}
+	topics := []string{"singing", "Marshmallow", "announce", "talk", "News_Show", "Anniversary", "3D_Stream"}
 	var allVideos []utility.APIVideoInfo
 
 	for _, topic := range topics {
