@@ -2,11 +2,11 @@
 package main
 
 import (
+	"context"
 	"holo-checker-app/internal/controller"
 	"holo-checker-app/internal/service"
 	"holo-checker-app/internal/utility"
-	"os/exec"
-	"runtime"
+	"net"
 
 	// "net/http"
 	_ "net/http/pprof"
@@ -17,27 +17,48 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func isHostReachable(host string) bool {
-	var cmd *exec.Cmd
+func checkSSH(ctx context.Context, host, port string) error {
+	address := net.JoinHostPort(host, port)
+	dialer := &net.Dialer{}
 
-	if runtime.GOOS == "windows" {
-		cmd = exec.Command("ping", "-n", "1", host)
-	} else {
-		cmd = exec.Command("ping", "-c", "1", host)
+	conn, err := dialer.DialContext(ctx, "tcp", address)
+	if err != nil {
+		return err
 	}
+	conn.Close()
+	return nil
+}
 
-	err := cmd.Run()
-	return err == nil
+func checkWithRetry(host, port string, attempts int, timeout time.Duration) bool {
+	for i := 1; i <= attempts; i++ {
+		ctx, cancel := context.WithTimeout(context.Background(), timeout)
+
+		err := checkSSH(ctx, host, port)
+		cancel()
+
+		if err == nil {
+			return true
+		}
+
+		logrus.Warnf("Attempt %d failed: %v", i, err)
+		time.Sleep(2 * time.Second)
+	}
+	return false
 }
 
 func main() {
 	utility.SetLog()
 	utility.SetEnv()
 
-	if isHostReachable("168.110.203.131") {
+	host := "168.110.203.131"
+	port := "22"
+
+	if checkWithRetry(host, port, 3, 3*time.Second) {
 		logrus.Warn("Linux server reachable. Exiting Windows app.")
 		return
 	}
+
+	logrus.Error("Linux server unreachable. Holochecker Windows app running.")
 
 	km := service.NewKaraokeManager()
 	apiClient := controller.NewAPIClient(utility.XApiKey)
